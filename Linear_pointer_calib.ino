@@ -18,22 +18,15 @@ volatile long revCurrent = 0;     // stores the amount of half-rotations the poi
 long revOld;                      // stores the previous amount of half-rotations (where the pointer was before it started moving to a new value)
 long revDesired;                  // stores the value of half-rotations the pointer has to be away from origin to match potentiometer, or cli input
 long revDelta;                    // stores the difference in half-rotations between the current position and the requested position
-
 int revMin = 0;                  // minimun value in half-rotations the pointer is allowed to move to (editable)
 int revMax = 380;                // maximum value in half-rotations the pointer is allowed to move to (editable)
-
 int cmMin = 0;                   // minimum value in cm the pointer is allowed to move to (editable)
 int cmMax = 15;                  // maximun value in cm the pointer is allowed to move to (editable)
-
 unsigned char inputChars;        //stores the characters inputted via serial monitor
-
 int mode;                        // stores a number ranged 0-2 which defines what mode the program is in (0=potentiometer, 1=cli, 2=calibrate)
-
 unsigned long millisOld = 0;     // stores timestamp of previous blink (in milliseconds )
 int ledstate = 0;                // stores pwm value to write to the status led
-
 byte tens, units, number, numbers[2] = {0, 0}; // variable for storing data regarding the parsing of data inputted through the serial monitor
-
 bool newNumber;                  // stores wether or not the latest value is the same as the previous value
 
 int calibOffset = -7;             // offset to finetune calibration (editable)
