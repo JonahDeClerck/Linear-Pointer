@@ -38,7 +38,7 @@ void setup ()
   Serial.begin(9600);
 
   //* mode
-  mode = 0; // start in potentiometer mode
+  mode = 0; // start in calibration mode
 
   //* interrupt
   attachInterrupt(digitalPinToInterrupt(opto_1), interrupt_cycle, RISING);  //attach an interrupt to opto_1, executing interrupt_cycle, whenever a rise in signal occurs
